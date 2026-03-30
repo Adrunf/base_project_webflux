@@ -6,9 +6,11 @@ import java.time.LocalDate;
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
-public class Person {
+@NoArgsConstructor
+public class User {
     private Long id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
+    private City city;
 }

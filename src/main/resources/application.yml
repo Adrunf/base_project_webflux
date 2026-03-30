@@ -9,7 +9,7 @@ management:
 spring:
   profiles:
     active: ${ACTIVE_PROFILE:dev}
-  data:
-    mongodb:
-      database: ${DATABASE_NAME:personal-db}
-      uri: ${DATABASE_URI:mongodb://<username>:<password>@localhost:27017/?retryWrites=true&w=majority}
+  r2dbc:
+    url: ${DATABASE_URL:r2dbc:postgresql://localhost:5432/cleanarchitecture}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}

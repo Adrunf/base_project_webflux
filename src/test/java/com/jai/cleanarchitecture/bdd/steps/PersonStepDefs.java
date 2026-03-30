@@ -1,6 +1,6 @@
 package com.jai.cleanarchitecture.bdd.steps;
 
-import com.jai.cleanarchitecture.presentation.rest.dto.PersonDTO;
+import com.jai.cleanarchitecture.presentation.rest.dto.UserDTO;
 import com.jai.cleanarchitecture.providers.PersonDTOProvider;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
@@ -22,7 +22,7 @@ public class PersonStepDefs {
 
     WebClient webTestClient;
 
-    Mono<PersonDTO> result;
+    Mono<UserDTO> result;
 
     @Before
     public void setUp() {
@@ -33,11 +33,11 @@ public class PersonStepDefs {
     @Given("A user publish a new Person named {word}")
     public void aUserPublishANewPerson(String name) {
 
-        Mono<PersonDTO> requestResult = webTestClient.post().uri("/person")
+        Mono<UserDTO> requestResult = webTestClient.post().uri("/person")
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromValue(new PersonDTOProvider().getPersonDTO()))
                 .retrieve()
-                .bodyToMono(PersonDTO.class);
+                .bodyToMono(UserDTO.class);
         StepVerifier.create(requestResult)
                 .expectNext(new PersonDTOProvider().getPersonDTO())
                 .verifyComplete();
@@ -46,7 +46,7 @@ public class PersonStepDefs {
     @When("A user asks for the person with id {word}")
     public void aUserGetPersonWithId(String id) {
         result = webTestClient.get().uri(uriBuilder -> uriBuilder.path("/person/{id}").build(Long.parseLong(id)))
-                .retrieve().bodyToMono(PersonDTO.class);
+                .retrieve().bodyToMono(UserDTO.class);
     }
 
     @Then("The following person should be in the response content")

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonDTO {
+public class UserDTO {
     @JsonProperty("id")
     private Long id;
     @JsonProperty("firstName")
@@ -21,5 +21,6 @@ public class PersonDTO {
     private String lastName;
     @JsonProperty("birthDate")
     private LocalDate birthDate;
-
+    @JsonProperty("city")
+    private CityDTO city;
 }

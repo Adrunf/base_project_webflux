@@ -65,8 +65,8 @@ To interact with the API, you can use tools like [Postman](https://www.postman.c
 Example API endpoints:
 
 
-- `POST /person`: Create a new person.
-- `GET /person/{id}`: Retrieve a person by ID.
+- `POST /user`: Create a new user.
+- `GET /user/{id}`: Retrieve a user by ID.
 
 Ensure to check the API documentation and the available endpoints in the project source code.
 
