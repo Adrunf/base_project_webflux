@@ -35,14 +35,14 @@ public class UserRepositoryAdapter implements UserRepository {
     public Flux<User> findAll() {
         String sql = """
             SELECT 
-                p.id,
-                p.first_name,
-                p.last_name,
-                p.birth_date,
-                c.id AS city_id,
-                c.name AS city_name
-            FROM user p
-            JOIN city c ON p.city_id = c.id
+                u."id",
+                u."first_name",
+                u."last_name",
+                u."birth_date",
+                c."id" AS city_id,
+                c."name" AS city_name
+            FROM "user" u
+            JOIN "city" c ON u."city_id" = c."id"
         """;
 
         return databaseClient.sql(sql)

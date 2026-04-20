@@ -2,6 +2,7 @@ package com.jai.cleanarchitecture.domain.usecase;
 
 import com.jai.cleanarchitecture.domain.model.User;
 import com.jai.cleanarchitecture.domain.repository.UserRepository;
+import com.jai.cleanarchitecture.domain.usecase.user.CreateUserUseCase;
 import com.jai.cleanarchitecture.providers.PersonProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;

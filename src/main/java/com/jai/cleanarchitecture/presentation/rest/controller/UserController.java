@@ -1,7 +1,7 @@
 package com.jai.cleanarchitecture.presentation.rest.controller;
 
-import com.jai.cleanarchitecture.domain.usecase.CreateUserUseCase;
-import com.jai.cleanarchitecture.domain.usecase.FetchUserUseCase;
+import com.jai.cleanarchitecture.domain.usecase.user.CreateUserUseCase;
+import com.jai.cleanarchitecture.domain.usecase.user.FetchUserUseCase;
 import com.jai.cleanarchitecture.presentation.rest.dto.UserDTO;
 import com.jai.cleanarchitecture.presentation.rest.mapper.UserDTOMapper;
 import lombok.RequiredArgsConstructor;

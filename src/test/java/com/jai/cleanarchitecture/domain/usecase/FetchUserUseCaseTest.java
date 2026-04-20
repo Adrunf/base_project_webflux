@@ -2,6 +2,7 @@ package com.jai.cleanarchitecture.domain.usecase;
 
 import com.jai.cleanarchitecture.domain.model.User;
 import com.jai.cleanarchitecture.domain.repository.UserRepository;
+import com.jai.cleanarchitecture.domain.usecase.user.FetchUserUseCase;
 import com.jai.cleanarchitecture.providers.PersonProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,12 +16,12 @@ import static org.mockito.Mockito.*;
 class FetchUserUseCaseTest {
 
     UserRepository userRepository;
-    com.jai.cleanarchitecture.usecase.FetchUserUseCase fetchUserUseCase;
+    FetchUserUseCase fetchUserUseCase;
 
     @BeforeEach
     void setUp() {
         userRepository = mock(UserRepository.class);
-        fetchUserUseCase = new com.jai.cleanarchitecture.usecase.FetchUserUseCase(userRepository);
+        fetchUserUseCase = new FetchUserUseCase(userRepository);
     }
 
     @ParameterizedTest

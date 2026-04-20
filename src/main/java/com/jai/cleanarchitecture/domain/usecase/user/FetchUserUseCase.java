@@ -1,4 +1,4 @@
-package com.jai.cleanarchitecture.domain.usecase;
+package com.jai.cleanarchitecture.domain.usecase.user;
 
 import com.jai.cleanarchitecture.domain.model.User;
 import com.jai.cleanarchitecture.domain.repository.UserRepository;
