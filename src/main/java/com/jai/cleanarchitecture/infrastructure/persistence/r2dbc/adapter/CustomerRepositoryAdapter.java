@@ -5,6 +5,7 @@ import com.jai.cleanarchitecture.domain.repository.CustomerRepository;
 import com.jai.cleanarchitecture.infrastructure.persistence.r2dbc.mapper.CustomerMapper;
 import com.jai.cleanarchitecture.infrastructure.persistence.r2dbc.repository.ReactiveCustomerRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
  */
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class CustomerRepositoryAdapter implements CustomerRepository {
     private final ReactiveCustomerRepository reactiveCustomerRepository;
     private final CustomerMapper customerMapper;
