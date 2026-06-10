@@ -11,7 +11,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface CustomerMapper {
     Customer toDomain(CustomerEntity customerEntity);
-
     CustomerEntity toEntity(Customer customer);
-
 }

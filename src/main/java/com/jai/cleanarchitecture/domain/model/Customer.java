@@ -1,20 +1,18 @@
 package com.jai.cleanarchitecture.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Data
-@Builder(toBuilder = true)
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Customer extends Person{
     private Long customerId;
     private String password;
     private Boolean status;
-    private Person person;
     private List<Account> accounts;
 }

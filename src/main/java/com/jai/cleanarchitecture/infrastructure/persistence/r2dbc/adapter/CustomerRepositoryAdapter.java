@@ -18,7 +18,6 @@ import reactor.core.publisher.Mono;
 public class CustomerRepositoryAdapter implements CustomerRepository {
     private final ReactiveCustomerRepository reactiveCustomerRepository;
     private final CustomerMapper customerMapper;
-    private final DatabaseClient databaseClient;
 
     @Override
     public Mono<Customer> createCustomer(Customer customer) {

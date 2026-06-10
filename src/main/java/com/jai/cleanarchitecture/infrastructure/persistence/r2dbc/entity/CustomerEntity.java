@@ -2,6 +2,10 @@ package com.jai.cleanarchitecture.infrastructure.persistence.r2dbc.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
@@ -10,8 +14,11 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.util.List;
 
 @Table("customer")
-@Data
-@SuperBuilder(toBuilder = true)
+@Getter
+@Setter
+@ToString
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerEntity extends PersonEntity{
